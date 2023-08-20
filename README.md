@@ -1,3 +1,23 @@
+### Update: fixed!
+
+Fixed in [this commit](https://github.com/jamieyung/purescript-halogen-bug-mre/commit/41e7095c4dba10cadcd7b96251d1e1acf8cad30d).
+
+Turns out child slots (`HH.slot_ ...`) need to be wrapped in the parent.
+
+Eg. this will be buggy:
+```purescript
+import Halogen.HTML as HH
+
+render = HH.slot_ ...
+```
+
+This will be fine:
+```purescript
+import Halogen.HTML as HH
+
+render = HH.div_ [ HH.slot_ ... ]
+```
+
 ### Steps to replicate
 
 1. `npm install`
