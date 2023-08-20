@@ -5,8 +5,8 @@
 3. `make` (this starts a server, usually on localhost:8000. The exact url will be printed out in the console)
 4. Browse to http://127.0.0.1:8000 (or whatever the console printed in step 3
 5. Click the button that says `Click me`. This should do the following:
-  1. Update the url to http://127.0.0.1:8000/#child
-  2. Update the page (there should be a new button).
+    - Update the url to http://127.0.0.1:8000/#child
+    - Update the page (there should be a new button).
 6. Click the new button that also says `Click me`. The url should not update, but the page itself should.
 7. Now press the back button in your browser. What SHOULD happen is the previous page gets displayed; however, a blank page is shown instead.
 
