@@ -42,7 +42,7 @@ component = H.mkComponent
   { initialState: const Home
   , render: case _ of
       Home -> HH.button [ HE.onClick \_ -> unit ] [ HH.text "Click me" ]
-      Child -> HH.slot_ (Proxy :: Proxy "child") unit child unit
+      Child -> HH.div_ [ HH.slot_ (Proxy :: Proxy "child") unit child unit ]
   , eval: H.mkEval $ H.defaultEval
       { handleAction = \_ ->
           -- This updates the hash, which triggers the hash change listener above.
@@ -65,6 +65,6 @@ child = H.mkComponent
         , HH.br_
         , HH.button [ HE.onClick \_ -> unit ] [ HH.text "Click me" ]
         ]
-      false -> HH.text "If you press back in the browser now, you'll get a blank screen"
+      false -> HH.text "If you press back in the browser now, you'll get a blank screen (No longer true; wrapping the child slot in a div fixes the issue)"
   , eval: H.mkEval $ H.defaultEval { handleAction = \_ -> H.put false }
   }
