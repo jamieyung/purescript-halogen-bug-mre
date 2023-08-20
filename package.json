@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "esbuild": "^0.18.13"
+  },
+  "scripts": {
+    "serve": "esbuild index.js --bundle --servedir=www --outdir=www"
+  }
+}
